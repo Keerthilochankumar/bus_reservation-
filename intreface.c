@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<conio.h>
     struct bus{
@@ -27,16 +26,12 @@ void interface(){ int x;
                }
 
 }
-int reservation(){system("cls");
-int bus1();
-int bus2();
-int bus3();
-int bus4();
+int reservation(){ system("cls");
                int d[3];
     printf("\n\n\t\t\t  1:BUS reservation\n");
     printf("date:");
     scanf("%d%d%d",&d[0],&d[1],&d[2]) ;
-    int s;
+    int num;
                     for(int i=0;i<=1;i++){//0=first one ,2=second one,1=third one,3=fourth one
                     printf("bus number :%d\t\t\t\t\t\t bus number:%d\n",i+1,i+3);
                     printf("date: %d-%d-%d\t\t\t\t\t\t date:%d%d%d\n",d[0],d[1],d[2],d[0],d[1],d[2]);
@@ -45,9 +40,9 @@ int bus4();
                     printf("\tdeparture time :%d\t\t departure time :%d\n\tarrival time :%d\t\t rarrival time :%d\n",b[i].dtime,b[i+2].dtime,b[i].atime,b[i+2].atime);
                                       }
                         printf("enter bus numbe");
-                        scanf("%d",num);
+                        scanf("%d",&num);
                           system("cls");
-                          switch(s){
+                          switch(num){
                                       case 1:bus1();
                                              break;
                                       case 2:bus2();
@@ -55,22 +50,54 @@ int bus4();
                                       case 3:bus3();
                                              break;
                                       case 4:bus4();
-                                            break;
-                                      }
+                                             break;
+                          }}
 
 
 
+FILE*busrev1;
 
-                          }
+int bus1(){ system("cls");printf( "departure :%s\tarival :%s\n",b[0].dplace,b[0].aplace);
+             printf("depature timings :%d \t arival time:%d\n",b[0].dtime,b[0].atime);
+             printf("   yes is avalable \tno is reserved\n");
 
-int bus1(){ system("cls");
-             printf("bus agency:%s",b[1].busname);
+                int res,s;//s=no of seats
+                int i,j;
+                char name[20]="yes";
+                int resr[30];
+                for(i=1;i<30;){
+                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+}               printf("enter the no of seats required:");
+                scanf("%d",&s);
+                for(j=1;j<=s;j++){
+                     printf("the seat no :");
+                     scanf("%d",&res);
+                     resr[j]=res;
+                     }
+                     busrev1=fopen("busrev1","w");
+                     fprintf(busrev1,"%d",resr);
+                     fclose(busrev1);
+                     system("cls");
+                     fop(*busrev1);
 
-
-            }
+                }
 int bus2(){
+  return 0;}
+int bus3(){ return 0;
 }
-int bus3(){
-}
+
 int bus4(){
+return 0;}
+
+
+
+int fop(FILE*r){
+    int i,l[30];
+r=fopen("busrev1","r");
+for(i=0;i<30;i++){
+fscanf(busrev1,"%d",l[i]);
+printf("\n%d",l[i]);
+ if(l[i]=='\0')i=30;
 }
+}
+
