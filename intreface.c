@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<conio.h>
     struct bus{
@@ -81,12 +82,61 @@ int bus1(){ system("cls");printf( "departure :%s\tarival :%s\n",b[0].dplace,b[0]
                      fop(*busrev1);
 
                 }
-int bus2(){
-  return 0;}
-int bus3(){ return 0;
+int bus2(){system("cls");printf( "departure :%s\tarival :%s\n",b[1].dplace,b[1].aplace);
+             printf("depature timings :%d \t arival time:%d\n",b[1].dtime,b[1].atime);
+             printf("   yes is avalable \tno is reserved\n");
+
+                int res,s;//s=no of seats
+                int i,j;
+                char name[20]="yes";
+                int resr[30];
+                for(i=1;i<30;){
+                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+}               printf("enter the no of seats required:");
+                scanf("%d",&s);
+                for(j=1;j<=s;j++){
+                     printf("the seat no :");
+                     scanf("%d",&res);
+                     resr[j]=res;
+                     }
+                      return 0;
+                      }
+int bus3(){ system("cls");printf( "departure :%s\tarival :%s\n",b[2].dplace,b[2].aplace);
+             printf("depature timings :%d \t arival time:%d\n",b[2].dtime,b[2].atime);
+             printf("   yes is avalable \tno is reserved\n");
+
+                int res,s;//s=no of seats
+                int i,j;
+                char name[20]="yes";
+                int resr[30];
+                for(i=1;i<30;){
+                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+}               printf("enter the no of seats required:");
+                scanf("%d",&s);
+                for(j=1;j<=s;j++){
+                     printf("the seat no :");
+                     scanf("%d",&res);
+                     resr[j]=res;
+                     }return 0;
 }
 
-int bus4(){
+int bus4(){system("cls");printf( "departure :%s\tarival :%s\n",b[3].dplace,b[3].aplace);
+             printf("depature timings :%d \t arival time:%d\n",b[3].dtime,b[3].atime);
+             printf("   yes is avalable \tno is reserved\n");
+
+                int res,s;//s=no of seats
+                int i,j;
+                char name[20]="yes";
+                int resr[30];
+                for(i=1;i<30;){
+                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+}               printf("enter the no of seats required:");
+                scanf("%d",&s);
+                for(j=1;j<=s;j++){
+                     printf("the seat no :");
+                     scanf("%d",&res);
+                     resr[j]=res;
+                     }
 return 0;}
 
 
@@ -100,4 +150,3 @@ printf("\n%d",l[i]);
  if(l[i]=='\0')i=30;
 }
 }
-
