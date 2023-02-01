@@ -1,4 +1,5 @@
 
+
 #include<stdio.h>
 #include<conio.h>
     struct bus{
@@ -57,67 +58,109 @@ int reservation(){ system("cls");
 
 
 FILE*busrev1;
+FILE*busrev2;
+FILE*busrev3;
+FILE*busrev4;
 
 int bus1(){ system("cls");printf( "departure :%s\tarival :%s\n",b[0].dplace,b[0].aplace);
              printf("depature timings :%d \t arival time:%d\n",b[0].dtime,b[0].atime);
-             printf("   yes is avalable \tno is reserved\n");
+             printf("   ave is avalable \tno is reserved\n");
 
-                int res,s;//s=no of seats
+
+                int res,s;
                 int i,j;
-                char name[20]="yes";
+                char name[10]="ave";
                 int resr[30];
-                for(i=1;i<30;){
-                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+                int*pv=&resr;
+                for(i=0;i<30;){
+                printf("%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
 }               printf("enter the no of seats required:");
                 scanf("%d",&s);
-                for(j=1;j<=s;j++){
+                for(j=0;j<s;j++){
                      printf("the seat no :");
-                     scanf("%d",&res);
-                     resr[j]=res;
+                     scanf("%d",&resr[j]);
                      }
-                     busrev1=fopen("busrev1","w");
-                     fprintf(busrev1,"%d",resr);
-                     fclose(busrev1);
                      system("cls");
-                     fop(*busrev1);
+                    char n[20];
+                      printf("\t\t****payment****\n");
+                      printf("\n the pasenger name = ");
+                      scanf("%s",n);
+                      printf("the cost ticket include tax is = %d\n",(s*400));
+                      printf("the discount applied is=%d\n",(s*12));
+                      printf("your total is %d",((s*400)-(s*12)));
+                      busrev1=fopen("busrev1.txt","w");
+                      fprintf(busrev1,"%s",n);
+                      int o;
+                      for(o=0;o<s;o++){
+                      fprintf(busrev1,"%d",*resr+o);}
+                      fclose(busrev1);
 
-                }
+                     }
+
+
+
+
 int bus2(){system("cls");printf( "departure :%s\tarival :%s\n",b[1].dplace,b[1].aplace);
              printf("depature timings :%d \t arival time:%d\n",b[1].dtime,b[1].atime);
              printf("   yes is avalable \tno is reserved\n");
-
-                int res,s;//s=no of seats
+                  int res,s;
                 int i,j;
-                char name[20]="yes";
+                char name[10]="ave";
                 int resr[30];
-                for(i=1;i<30;){
-                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+                int*pv=&resr;
+                for(i=0;i<30;){
+                printf("%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
 }               printf("enter the no of seats required:");
                 scanf("%d",&s);
-                for(j=1;j<=s;j++){
+                for(j=0;j<s;j++){
                      printf("the seat no :");
-                     scanf("%d",&res);
-                     resr[j]=res;
+                     scanf("%d",&resr[j]);
                      }
-                      return 0;
+                     system("cls");
+                   char n[20];
+                      printf("\t\t****payment****\n");
+                      printf("\n the pasenger name = ");
+                      scanf("%s",n);
+                      printf("the cost ticket include tax is = %d\n",(s*400));
+                      printf("the discount applied is=%d\n",(s*12));
+                      printf("your total is %d",((s*400)-(s*12)));
+                      busrev2=fopen("busrev2.txt","w");
+                      fprintf(busrev2,"%s",n);
+                      int o;
+                      for(o=0;o<s;o++){
+                      fprintf(busrev2,"%d",*resr+o);}
+                      fclose(busrev2);
                       }
 int bus3(){ system("cls");printf( "departure :%s\tarival :%s\n",b[2].dplace,b[2].aplace);
              printf("depature timings :%d \t arival time:%d\n",b[2].dtime,b[2].atime);
              printf("   yes is avalable \tno is reserved\n");
-
-                int res,s;//s=no of seats
+               int res,s;
                 int i,j;
-                char name[20]="yes";
+                char name[10]="ave";
                 int resr[30];
-                for(i=1;i<30;){
-                printf("\n%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
+                int*pv=&resr;
+                for(i=0;i<30;){
+                printf("%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\t%d:%s\n ",i++,name,i++,name,i++,name,i++,name,i++,name,i++,name);
 }               printf("enter the no of seats required:");
                 scanf("%d",&s);
-                for(j=1;j<=s;j++){
+                for(j=0;j<s;j++){
                      printf("the seat no :");
-                     scanf("%d",&res);
-                     resr[j]=res;
-                     }return 0;
+                     scanf("%d",&resr[j]);
+                     }
+                     system("cls");
+                     char n[20];
+                      printf("\t\t****payment****\n");
+                      printf("\n the pasenger name = ");
+                      scanf("%s",n);
+                      printf("the cost ticket include tax is = %d\n",(s*400));
+                      printf("the discount applied is=%d\n",(s*12));
+                      printf("your total is %d",((s*400)-(s*12)));
+                      busrev3=fopen("busrev3.txt","w");
+                      fprintf(busrev3,"%s",n);
+                      int o;
+                      for(o=0;o<s;o++){
+                      fprintf(busrev3,"%d",*resr+o);}
+                      fclose(busrev3);
 }
 
 int bus4(){system("cls");printf( "departure :%s\tarival :%s\n",b[3].dplace,b[3].aplace);
@@ -135,18 +178,25 @@ int bus4(){system("cls");printf( "departure :%s\tarival :%s\n",b[3].dplace,b[3].
                 for(j=1;j<=s;j++){
                      printf("the seat no :");
                      scanf("%d",&res);
-                     resr[j]=res;
-                     }
+                     resr[j]=res;}
+                     system ("cls");
+                  char n[20];
+                      printf("\t\t****payment****\n");
+                      printf("\n the pasenger name = ");
+                      scanf("%s",n);
+                      printf("the cost ticket include tax is = %d\n",(s*400));
+                      printf("the discount applied is=%d\n",(s*12));
+                      printf("your total is %d",((s*400)-(s*12)));
+                      busrev4=fopen("busrev4.txt","w");
+                      fprintf(busrev4,"%s",n);
+                      int o;
+                      for(o=0;o<s;o++){
+                      fprintf(busrev4,"%d",*resr+o);}
+                      fclose(busrev4);
+
 return 0;}
 
 
 
-int fop(FILE*r){
-    int i,l[30];
-r=fopen("busrev1","r");
-for(i=0;i<30;i++){
-fscanf(busrev1,"%d",l[i]);
-printf("\n%d",l[i]);
- if(l[i]=='\0')i=30;
-}
-}
+
+
