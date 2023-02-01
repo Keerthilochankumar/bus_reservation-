@@ -38,7 +38,7 @@ int reservation(){ system("cls");
                     printf("bus number :%d\t\t\t\t\t\t bus number:%d\n",i+1,i+3);
                     printf("date: %d-%d-%d\t\t\t\t\t\t date:%d%d%d\n",d[0],d[1],d[2],d[0],d[1],d[2]);
                     printf("\tbus agency:%s\t\t bus agency:%s\n",b[i].busname,b[i+2].busname);
-                    printf("\tdeparture place :%s \t\ departure place :%s \n\tarrival place :%s\t\t arrival place :%s\n",b[i].dplace,b[i+2].dplace,b[i].aplace,b[i+2].aplace);
+                    printf("\tdeparture place :%s \t departure place :%s \n\tarrival place :%s\t\t arrival place :%s\n",b[i].dplace,b[i+2].dplace,b[i].aplace,b[i+2].aplace);
                     printf("\tdeparture time :%d\t\t departure time :%d\n\tarrival time :%d\t\t rarrival time :%d\n",b[i].dtime,b[i+2].dtime,b[i].atime,b[i+2].atime);
                                       }
                         printf("enter bus numbe");
