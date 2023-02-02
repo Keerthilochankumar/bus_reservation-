@@ -1,5 +1,4 @@
 
-
 #include<stdio.h>
 #include<conio.h>
     struct bus{
@@ -31,14 +30,18 @@ void interface(){ int x;
 int reservation(){ system("cls");
                int d[3];
     printf("\n\n\t\t\t  1:BUS reservation\n");
-    printf("date:");
-    scanf("%d%d%d",&d[0],&d[1],&d[2]) ;
+    printf("d:");
+    scanf("%d",&d[0]);
+    printf("m:");
+    scanf("%d:",&d[1]);
+    printf("y:");
+    scanf("%d",&d[2]);
     int num;
                     for(int i=0;i<=1;i++){//0=first one ,2=second one,1=third one,3=fourth one
                     printf("bus number :%d\t\t\t\t\t\t bus number:%d\n",i+1,i+3);
                     printf("date: %d-%d-%d\t\t\t\t\t\t date:%d%d%d\n",d[0],d[1],d[2],d[0],d[1],d[2]);
                     printf("\tbus agency:%s\t\t bus agency:%s\n",b[i].busname,b[i+2].busname);
-                    printf("\tdeparture place :%s \t departure place :%s \n\tarrival place :%s\t\t arrival place :%s\n",b[i].dplace,b[i+2].dplace,b[i].aplace,b[i+2].aplace);
+                    printf("\tdeparture place :%s \t\ departure place :%s \n\tarrival place :%s\t\t arrival place :%s\n",b[i].dplace,b[i+2].dplace,b[i].aplace,b[i+2].aplace);
                     printf("\tdeparture time :%d\t\t departure time :%d\n\tarrival time :%d\t\t rarrival time :%d\n",b[i].dtime,b[i+2].dtime,b[i].atime,b[i+2].atime);
                                       }
                         printf("enter bus numbe");
@@ -61,7 +64,6 @@ FILE*busrev1;
 FILE*busrev2;
 FILE*busrev3;
 FILE*busrev4;
-
 int bus1(){ system("cls");printf( "departure :%s\tarival :%s\n",b[0].dplace,b[0].aplace);
              printf("depature timings :%d \t arival time:%d\n",b[0].dtime,b[0].atime);
              printf("   ave is avalable \tno is reserved\n");
@@ -92,7 +94,8 @@ int bus1(){ system("cls");printf( "departure :%s\tarival :%s\n",b[0].dplace,b[0]
                       fprintf(busrev1,"%s",n);
                       int o;
                       for(o=0;o<s;o++){
-                      fprintf(busrev1,"%d",*resr+o);}
+                      printf("your seat are :%d\n",*(resr+o));
+                      fprintf(busrev1,"%d,",*resr+o);}
                       fclose(busrev1);
 
                      }
@@ -128,7 +131,8 @@ int bus2(){system("cls");printf( "departure :%s\tarival :%s\n",b[1].dplace,b[1].
                       fprintf(busrev2,"%s",n);
                       int o;
                       for(o=0;o<s;o++){
-                      fprintf(busrev2,"%d",*resr+o);}
+                      printf("your seat are :%d\n",*(resr+o));
+                      fprintf(busrev2,"%d,",*resr+o);}
                       fclose(busrev2);
                       }
 int bus3(){ system("cls");printf( "departure :%s\tarival :%s\n",b[2].dplace,b[2].aplace);
@@ -159,7 +163,8 @@ int bus3(){ system("cls");printf( "departure :%s\tarival :%s\n",b[2].dplace,b[2]
                       fprintf(busrev3,"%s",n);
                       int o;
                       for(o=0;o<s;o++){
-                      fprintf(busrev3,"%d",*resr+o);}
+                      fprintf(busrev3,"%d,",*(resr+o));
+                      printf("your seat are :%d\n",*(resr+o));}
                       fclose(busrev3);
 }
 
@@ -190,11 +195,13 @@ int bus4(){system("cls");printf( "departure :%s\tarival :%s\n",b[3].dplace,b[3].
                       busrev4=fopen("busrev4.txt","w");
                       fprintf(busrev4,"%s",n);
                       int o;
-                      for(o=0;o<s;o++){
-                      fprintf(busrev4,"%d",*resr+o);}
+                      for(o=1;o<=s;o++){
+                       printf("your seat are :%d\n",*(resr+o));
+                      fprintf(busrev4,"%d,",*(resr+o));}
                       fclose(busrev4);
 
 return 0;}
+
 
 
 
