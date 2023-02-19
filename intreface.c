@@ -8,8 +8,6 @@ int main()
 #include<stdio.h>
 #include<conio.h>
     struct bus{
-
-
                char busname[20];
                int dtime,atime;
                char dplace[20],aplace[20];
@@ -34,7 +32,6 @@ void interface(){ int x;
                        busavalable();
                        break;
                }
-
 }
 void  busavalable(){
                     printf("\t\t\t *********bus avalable*********\n");
@@ -128,10 +125,6 @@ int bus1(){
                       fclose(busrev1);
                       fclose(b1);
                      }
-
-
-
-
 int bus2(){  system("cls");printf( "departure :%s\tarival :%s\n",b[1].dplace,b[1].aplace);
              printf("depature timings :%d \t arival time:%d\n",b[1].dtime,b[1].atime);
              printf("   yes is avalable \tno is reserved\n");
@@ -241,4 +234,5 @@ int bus4(){system("cls");printf( "departure :%s\tarival :%s\n",b[3].dplace,b[3].
                       fclose(busrev4);
 
 return 0;}
+
 
